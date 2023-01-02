@@ -1,7 +1,9 @@
 /*
-author: Corel
-email: zcorel@hotmail.com
-*/
+ * author: Corel
+ *  email: zcorel@hotmail.com
+ * 
+ * b<0, levelage extended euclidean algorithm to calculate inverse a modulo x
+ */
 
 #include <bits/stdc++.h>
 
