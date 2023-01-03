@@ -1,7 +1,7 @@
 /*
  * author: Corel
- * email: zcorel@hotmail.com
-
+ *  email: zcorel@hotmail.com
+ *
  * 使用splay维护deadline排序(d[N]), 子树时间和(amtm[N])及最大超时(dl[N])
  * 每次插入一个点, 利用子树时间和计算deadline排序时间前缀和(prem[N])及超时(prem[k]-d[k]),
  * 插入点后面的(deadline更大)点, 进行懒更新超时(q[N])
