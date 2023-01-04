@@ -17,7 +17,7 @@ const int INF=0x3f3f3f3f;
 int n, ans[N];
 
 // splay
-struct SPLAY {
+struct Splay {
     int rt = 0, tot = 0, c[N][2], f[N], d[N], q[N], dl[N]={-INF}, m[N], prem[N], amtm[N];
     int newnode(int dx, int mx) {
         ++tot;
