@@ -53,6 +53,8 @@ struct SegTree {
 
 bool check(int k) {
     st.clear();
+
+    int mx;
     for (int i=0, j=0; i<n; ++i) {
         for (; j<i; ++j) {
             if (p[sp[j]][1]-p[sp[j]][0]<k || p[sp[j]][0]+c-p[sp[j]][1]<k) continue;
@@ -60,7 +62,7 @@ bool check(int k) {
             st.update(p[sp[j]][1], p[sp[j]][0]);
         }
         if (p[sp[i]][1]-p[sp[i]][0]<k || p[sp[i]][0]+c-p[sp[i]][1]<k) continue;
-        int mx=st.query(max(0, p[sp[i]][1]-c+k), p[sp[i]][0]-k);
+        mx=st.query(max(0, p[sp[i]][1]-c+k), p[sp[i]][0]-k);
         mx=max(mx, st.query(p[sp[i]][0]+k, p[sp[i]][1]-k));
         mx=max(mx, st.query(p[sp[i]][1]+k, min(c, p[sp[i]][0]+c-k)));
         if (mx<0) continue;
