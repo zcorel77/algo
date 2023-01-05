@@ -18,7 +18,7 @@ int n, q, k, a[N], ql[Q], qr[Q];
 
 // Segment tree
 #define lo (o<<1)
-#define ro lo+1
+#define ro (lo+1)
 #define ls lo, l, (l+r)/2
 #define rs ro, (l+r)/2+1, r
 struct SegTree{
