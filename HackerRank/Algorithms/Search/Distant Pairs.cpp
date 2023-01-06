@@ -9,7 +9,6 @@
  * 对于某个单点距离大于k的点i, 考虑距离大于k的点集中, 所有aj+k小于ai的点j
  * 利用segment tree, 把aj赋值到位置bj, 查询满足条件的三个bj区间中的最大aj, 判别aj与bi距离是否大于k
  * 满足条件的bj区间, [max(0, bi-c+k), ai-k], [ai+k, bi-k], [bi+k, min(c, ai+c-k)]
- * 
  */
 
 #include <bits/stdc++.h>
