@@ -71,6 +71,7 @@ int main() {
                 vi dp0(n+k+1, 0);
                 swap(dp0, dp[di]);
 
+                // dp错误数, 事实上 j+cnt0/cnt1>k 时, 可以不计算 
                 for (int j=0; j<=k; ++j) {
                     (dp[di][j+cnt0]+=dp0[j])%=MOD;
                     (dp[di][j+cnt1]+=dp0[j])%=MOD;
