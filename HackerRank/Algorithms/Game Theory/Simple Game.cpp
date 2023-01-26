@@ -14,12 +14,12 @@ using namespace std;
 const int N=601;
 const int M=10;
 const int K=601;
-const int T=1024;
+const int MEX=1024;
 const int MOD=1e9+7;
 
 typedef vector<int> vi;
 
-int n, m, k, gr[N], dp[2][N][T];
+int n, m, k, gr[N], dp[2][N][MEX];
 
 int main() {
     ios_base::sync_with_stdio(false);
@@ -48,9 +48,7 @@ int main() {
                 }
             }
             int j=0;
-            for (; j<T; ++j) {
-                if (!mex[j]) break;
-            }
+            while (j<MEX && mex[j]) ++j;
             gr[i]=j;
         }
     } else {
@@ -69,9 +67,9 @@ int main() {
     dp[mm][0][0]=1;
     for (int i=0; i<m; ++i) {
         mm^=1;
-        memset(dp[mm], 0, sizeof(int)*N*T);
+        memset(dp[mm], 0, sizeof(int)*N*MEX);
         for (int j=0; j<=n; ++j) {
-            for (int t=0; t<T; ++t) {
+            for (int t=0; t<MEX; ++t) {
                 // j个石头分i堆grundy为t的计数不为0的话
                 // 更新从j+1到n个石头分i+1堆grundy为t^gr[第i堆石子]的计数
                 if (!dp[mm^1][j][t]) continue;
@@ -84,7 +82,7 @@ int main() {
     }
 
     long ans=0L;
-    for (int t=1; t<T; ++t) {
+    for (int t=1; t<MEX; ++t) {
         ans+=dp[mm][n][t];
     }
 
