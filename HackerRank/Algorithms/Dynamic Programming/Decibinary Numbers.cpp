@@ -31,7 +31,6 @@ int main() {
 
     fill_n(a[0], K, 1); // 100..0
     b[0]=1;
-    // dp[0][1]=1;
 
     for (int i=1; i<N; ++i) {
         for (int j=1; j<K; ++j) {
@@ -39,10 +38,8 @@ int main() {
             for (int k=1; k<10; ++k) {
                 x=k*(1<<(j-1));
                 // 长度小于j的数都能进位到j
-                // if (x<=i) dp[i][j]+=a[i-x][j-1];
                 if (x<=i) a[i][j]+=a[i-x][j-1];
             }
-            // a[i][j]=a[i][j-1]+dp[i][j];
         }
         b[i]=b[i-1]+a[i][K-1];
     }
@@ -70,6 +67,7 @@ int main() {
 
         --ak;
         if (ak<0) {
+            // 0的话, 需要输出一个leading 0
             cout << 0;
         } else {
             while (ak>=0) {
