@@ -67,7 +67,7 @@ int main() {
     dp[mm][0][0]=1;
     for (int i=0; i<m; ++i) {
         mm^=1;
-        memset(dp[mm], 0, sizeof(int)*N*MEX);
+        memset(dp[mm], 0, sizeof(dp[mm]));
         for (int j=0; j<=n; ++j) {
             for (int t=0; t<MEX; ++t) {
                 // j个石头分i堆grundy为t的计数不为0的话

@@ -159,7 +159,7 @@ int main() {
 
     cin >> g;
     while (g--) {
-        memset(board, 0, sizeof(int)*N*N);
+        memset(board, 0, sizeof(board));
         
         cin >> w >> b >> m;
         for (int i=0; i<w; ++i) {

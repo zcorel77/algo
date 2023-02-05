@@ -29,8 +29,8 @@ struct Trie {
     } p[N*64];
     int rt[N], tot=0;
     void clear() {
-        memset(p, 0, sizeof(P)*N*64);
-        memset(rt, 0, sizeof(int)*N);
+        memset(p, 0, sizeof(p));
+        memset(rt, 0, sizeof(rt));
         tot=0;
     }
     void add(long x, int i) {

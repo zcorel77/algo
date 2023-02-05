@@ -35,7 +35,7 @@ int main() {
 
     gr[0]=gr[1]=gr[2]=0; gr[3]=1;
     for (int i=4; i<N; ++i) {
-        memset(mex, 0, sizeof(bool)*MEX);
+        memset(mex, 0, sizeof(mex));
         grundy(1, i, 0);
 
         int k=0;
