@@ -4,7 +4,7 @@
  * 
  * len[i], 记录以i结尾的最长严格递增序列长度
  * idx[i], 记录长度i的的序列的结尾数中的最小数
- * s, 候选序列的结尾数集合
+ * s, 候选序列的结尾数集合, 最终, s也是最长严格递增序列
  */
 
 #include <bits/stdc++.h>
@@ -53,11 +53,11 @@ int main() {
         }
     }
 
-    int ans = 0;
-    for (cur=s.begin(); cur != s.end(); ++cur) {
-        ans = max(ans, len[*cur]);
-    }
-    cout << ans << "\n";
+    // for (cur=s.begin(); cur != s.end(); ++cur) {
+    //     cout << *cur << " ";
+    // }
+    // cout << "\n";
+    cout << s.size() << "\n";
 
     cout << "Time = " << double(clock()) / CLOCKS_PER_SEC << "\n";
     return 0;
